@@ -91,6 +91,7 @@ tbody tr:hover{background:#fafbff}
 /* MTD TABLE */
 .mtd-table-wrap{overflow-x:auto}
 </style>
+<base target="_blank">
 </head>
 <body>
 
@@ -266,7 +267,7 @@ tbody tr:hover{background:#fafbff}
     <div class="cards">
       <div class="card">
         <div class="label">Total MTD Jun/2026</div>
-        <div class="value" id="jun-total-val">R$ 63.586</div>
+        <div class="value" id="jun-total-val">R$ 216.436</div>
         <div class="sub" id="jun-total-sub">Acumulado MTD Brasil (1/Jun)</div>
       </div>
       <div class="card">
@@ -784,37 +785,37 @@ function gerarComentarioDia() {
 // DADOS JUN/2026
 // =============================================
 var junData = {
-  'BK É FOGO LESTE':   [5902.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
-  'BK É FOGO NORTE':   [1389.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
-  'CENTRO OESTE':      [7456.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
-  'MINAS BAHIA':       [2641.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
-  'NE':                [1860.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
-  'RJ':                [20606.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
-  'SP CENTRO LITORAL': [6745.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
-  'SP INTERIOR NORTE': [4326.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
-  'SP INTERIOR SUL':   [7516.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
-  'SP SUL':            [3484.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
-  'SUL':               [1661.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]
+  'BK É FOGO LESTE':   [5193.0,11083.0,5940.0,14714.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+  'BK É FOGO NORTE':   [1389.0,1154.0,551.0,837.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+  'CENTRO OESTE':      [7456.0,9664.0,6701.0,6637.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+  'MINAS BAHIA':       [1955.0,6011.0,10385.0,11448.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+  'NE':                [1280.0,7906.0,1829.0,4114.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+  'RJ':                [22916.0,5898.0,4160.0,15768.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+  'SP CENTRO LITORAL': [6745.0,2074.0,5247.0,9068.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+  'SP INTERIOR NORTE': [5399.0,4658.0,2899.0,5824.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+  'SP INTERIOR SUL':   [8699.0,9712.0,2854.0,1357.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+  'SP SUL':            [3484.0,5008.0,6778.0,7846.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+  'SUL':               [1661.0,7921.0,6281.0,12015.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]
 };
 
 var junExtraData = {
-  'BK É FOGO LESTE':   {rest:68, projVenda:41176582, objMes:304707, objDia:10157, diaUlt:5902.0, acumAntes:0, acum:5902.0, perdaLoja:0, pctMes:0.5},
-  'BK É FOGO NORTE':   {rest:32, projVenda:19426340, objMes:143755, objDia:4792,  diaUlt:1389.0, acumAntes:0, acum:1389.0, perdaLoja:0, pctMes:0.3},
-  'CENTRO OESTE':      {rest:65, projVenda:38216651, objMes:282803, objDia:9427,  diaUlt:7456.0, acumAntes:0, acum:7456.0, perdaLoja:0, pctMes:0.7},
-  'MINAS BAHIA':       {rest:54, projVenda:35806749, objMes:264970, objDia:8832,  diaUlt:2641.0, acumAntes:0, acum:2641.0, perdaLoja:0, pctMes:0.3},
-  'NE':                {rest:85, projVenda:56043789, objMes:414724, objDia:13824, diaUlt:1860.0, acumAntes:0, acum:1860.0, perdaLoja:0, pctMes:0.1},
-  'RJ':                {rest:93, projVenda:42409670, objMes:313832, objDia:10461, diaUlt:20606.0, acumAntes:0, acum:20606.0, perdaLoja:0, pctMes:1.7},
-  'SP CENTRO LITORAL': {rest:34, projVenda:17754650, objMes:131385, objDia:4380,  diaUlt:6745.0, acumAntes:0, acum:6745.0, perdaLoja:0, pctMes:1.3},
-  'SP INTERIOR NORTE': {rest:69, projVenda:36007228, objMes:266453, objDia:8882,  diaUlt:4326.0, acumAntes:0, acum:4326.0, perdaLoja:0, pctMes:0.4},
-  'SP INTERIOR SUL':   {rest:57, projVenda:32133102, objMes:237785, objDia:7926,  diaUlt:7516.0, acumAntes:0, acum:7516.0, perdaLoja:0, pctMes:0.9},
-  'SP SUL':            {rest:65, projVenda:34509873, objMes:255373, objDia:8512,  diaUlt:3484.0, acumAntes:0, acum:3484.0, perdaLoja:0, pctMes:0.4},
-  'SUL':               {rest:71, projVenda:35972842, objMes:266199, objDia:8873,  diaUlt:1661.0, acumAntes:0, acum:1661.0, perdaLoja:0, pctMes:0.2}
+  'BK É FOGO LESTE':   {rest:68, projVenda:41176582, objMes:304707, objDia:10157, diaUlt:14714.0, acumAntes:22216.0, acum:36930.0, perdaLoja:543.09, pctMes:0.67},
+  'BK É FOGO NORTE':   {rest:32, projVenda:19426340, objMes:143755, objDia:4792,  diaUlt:837.0, acumAntes:3094.0, acum:3931.0, perdaLoja:122.84, pctMes:0.15},
+  'CENTRO OESTE':      {rest:65, projVenda:38216651, objMes:282803, objDia:9427,  diaUlt:6637.0, acumAntes:23821.0, acum:30458.0, perdaLoja:468.58, pctMes:0.60},
+  'MINAS BAHIA':       {rest:54, projVenda:35806749, objMes:264970, objDia:8832,  diaUlt:11448.0, acumAntes:18351.0, acum:29799.0, perdaLoja:551.83, pctMes:0.62},
+  'NE':                {rest:85, projVenda:56043789, objMes:414724, objDia:13824, diaUlt:4114.0, acumAntes:11015.0, acum:15129.0, perdaLoja:177.99, pctMes:0.20},
+  'RJ':                {rest:93, projVenda:42409670, objMes:313832, objDia:10461, diaUlt:15768.0, acumAntes:32974.0, acum:48742.0, perdaLoja:524.11, pctMes:0.86},
+  'SP CENTRO LITORAL': {rest:34, projVenda:17754650, objMes:131385, objDia:4380,  diaUlt:9068.0, acumAntes:14066.0, acum:23134.0, perdaLoja:680.41, pctMes:0.98},
+  'SP INTERIOR NORTE': {rest:69, projVenda:36007228, objMes:266453, objDia:8882,  diaUlt:5824.0, acumAntes:12956.0, acum:18780.0, perdaLoja:272.17, pctMes:0.39},
+  'SP INTERIOR SUL':   {rest:57, projVenda:32133102, objMes:237785, objDia:7926,  diaUlt:1357.0, acumAntes:21265.0, acum:22622.0, perdaLoja:396.88, pctMes:0.53},
+  'SP SUL':            {rest:65, projVenda:34509873, objMes:255373, objDia:8512,  diaUlt:7846.0, acumAntes:16234.0, acum:23116.0, perdaLoja:355.63, pctMes:0.50},
+  'SUL':               {rest:71, projVenda:35972842, objMes:266199, objDia:8873,  diaUlt:12015.0, acumAntes:15863.0, acum:27878.0, perdaLoja:392.65, pctMes:0.58}
 };
 
-var junDias = [1];
-var brasilJunVals = [63586.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null];
+var junDias = [1,2,3,4];
+var brasilJunVals = [66177.0,71089.0,53625.0,89628.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null];
 var metaDiaJunLine = [];
-var metaDiaBrasilJun = 94987; // soma dos objDia / 30 dias
+var metaDiaBrasilJun = 97051; // soma dos objDia
 
 var junNames = Object.keys(junData);
 
@@ -894,7 +895,7 @@ function initJun() {
 
   var ratioTotal = totalObjDia>0 && totalDia>0 ? totalDia/totalObjDia : 0;
   var diaBgTotal = totalDia===0 ? '' : (ratioTotal < 1.0 ? 'background:#d4f4e2;color:#1a6e3a;font-weight:700' : ratioTotal <= 1.2 ? 'background:#fde8e8;color:#b91c1c;font-weight:700' : 'background:#ede9fe;color:#6d28d9;font-weight:700');
-  var pctTotal = 0.59; // % ponderado por projVenda
+  var pctTotal = 0.54; // % sobre venda projetada
   tbody.innerHTML +=
     '<tr class="total-row">' +
     '<td>BRASIL TOTAL</td>' +
