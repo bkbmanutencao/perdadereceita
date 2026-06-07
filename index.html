@@ -90,24 +90,133 @@ tbody tr:hover{background:#fafbff}
 
 /* MTD TABLE */
 .mtd-table-wrap{overflow-x:auto}
-</style>
-<base target="_blank">
-</head>
-<body>
+
+/* ========== MELHORIAS ========== */
+
+/* RESPONSIVIDADE MOBILE */
+@media (max-width: 768px) {
+  #dashboard { padding: 16px; }
+  header { flex-direction: column; align-items: flex-start; gap: 8px; }
+  header h1 { font-size: 1.15rem; }
+  .subtitle { font-size: .8rem; }
+  .cards { flex-direction: column; gap: 12px; }
+  .card { min-width: 100%; padding: 14px 16px; }
+  .card .value { font-size: 1.25rem; }
+  .chart-row { flex-direction: column; gap: 16px; }
+  .chart-box { min-width: 100%; padding: 16px; }
+  .chart-box.wide { flex: 1; }
+  .chart-box h2 { font-size: .85rem; }
+  .reg-tabs { gap: 6px; }
+  .reg-tab { padding: 6px 12px; font-size: .75rem; }
+  .view-toggle { flex-wrap: wrap; }
+  .view-btn { padding: 8px 16px; font-size: .8rem; }
+  table { font-size: .75rem; }
+  thead th, tbody td { padding: 6px 8px; }
+  .login-box { width: 90%; max-width: 340px; padding: 32px 24px; }
+  .section-divider h2 { font-size: .95rem; }
+  .legenda { font-size: .78rem; }
+}
+
+@media (max-width: 480px) {
+  .legenda { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .reg-cards { flex-direction: column; gap: 10px; }
+  .reg-card { min-width: 100%; padding: 12px 14px; }
+  .reg-card .value { font-size: 1.1rem; }
+}
+
+/* ACESSIBILIDADE - FOCUS VISIBLE */
+button:focus-visible, input:focus-visible, a:focus-visible {
+  outline: 3px solid #2d3be0;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* LOADING STATE */
+.btn-loading {
+  position: relative;
+  pointer-events: none;
+  opacity: 0.8;
+}
+.btn-loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  margin: -9px 0 0 -9px;
+  border: 2px solid #fff;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* MELHOR CONTRASTE WCAG AA */
+.st-verde { background: #d1fae5; color: #065f46; }
+.st-vermelho { background: #fee2e2; color: #991b1b; }
+.st-roxo { background: #f3e8ff; color: #6b21a8; }
+.st-amarelo { background: #fef9c3; color: #854d0e; }
+
+/* SKIP LINK PARA ACESSIBILIDADE */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #2d3be0;
+  color: #fff;
+  padding: 8px 12px;
+  z-index: 100;
+  transition: top 0.3s;
+  font-size: .85rem;
+  font-weight: 600;
+  border-radius: 0 0 4px 0;
+  text-decoration: none;
+}
+.skip-link:focus { top: 0; }
+
+/* SMOOTH SCROLL */
+html { scroll-behavior: smooth; }
+
+/* REDUCED MOTION */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
+}
+
+/* PRINT STYLES */
+@media print {
+  #login-screen { display: none !important; }
+  #dashboard { display: block !important; padding: 0; }
+  .view-toggle, .reg-tabs { display: none; }
+  .chart-box { break-inside: avoid; page-break-inside: avoid; }
+  .card { break-inside: avoid; page-break-inside: avoid; }
+  body { background: #fff; color: #000; }
+}
+
+</style><body>
+<a href="#dashboard" class="skip-link">Pular para o conteúdo</a>
+
 
 <!-- LOGIN -->
-<div id="login-screen">
+<div id="login-screen" role="dialog" aria-modal="true" aria-labelledby="login-title">
   <div class="login-box">
-    <h2>🔒 Perda de Receita Manutenção</h2>
-    <input type="text" id="inp-user" placeholder="Usuário" autocomplete="username">
-    <input type="password" id="inp-pass" placeholder="Senha" autocomplete="current-password">
-    <button onclick="doLogin()">Entrar</button>
-    <div id="login-error">Usuário ou senha incorretos.</div>
+    <h2 id="login-title">🔒 Perda de Receita Manutenção</h2>
+    <input type="text" id="inp-user" placeholder="Usuário" autocomplete="username" aria-label="Usuário" aria-required="true">
+    <input type="password" id="inp-pass" placeholder="Senha" autocomplete="current-password" aria-label="Senha" aria-required="true">
+    <button id="btn-login" onclick="doLogin()" aria-label="Entrar no sistema">Entrar</button>
+    <div id="login-error" role="alert" aria-live="polite" style="display:none">Usuário ou senha incorretos.</div>
   </div>
 </div>
 
 <!-- DASHBOARD -->
-<div id="dashboard">
+<div id="dashboard" role="main" tabindex="-1">
   <header>
     <div>
       <h1>📊 Perda de Receita Manutenção</h1>
@@ -115,14 +224,14 @@ tbody tr:hover{background:#fafbff}
     </div>
   </header>
 
-  <div class="view-toggle">
-    <button class="view-btn active" id="btn-mensal" onclick="setView('mensal')">📅 Mensal</button>
-    <button class="view-btn" id="btn-mtd" onclick="setView('mtd')">📆 MTD — Mai/2026</button>
-    <button class="view-btn" id="btn-jun" onclick="setView('jun')">📆 MTD — Jun/2026</button>
+  <div class="view-toggle" role="tablist" aria-label="Selecionar visualização">
+    <button class="view-btn active" id="btn-mensal" onclick="setView('mensal')" role="tab" aria-selected="true" aria-controls="view-mensal" tabindex="0">📅 Mensal</button>
+    <button class="view-btn" id="btn-mtd" onclick="setView('mtd')" role="tab" aria-selected="false" aria-controls="view-mtd" tabindex="-1">📆 MTD — Mai/2026</button>
+    <button class="view-btn" id="btn-jun" onclick="setView('jun')" role="tab" aria-selected="false" aria-controls="view-jun" tabindex="-1">📆 MTD — Jun/2026</button>
   </div>
 
   <!-- ===== VIEW MENSAL ===== -->
-  <div class="view active" id="view-mensal">
+  <div class="view active" id="view-mensal" role="tabpanel" aria-labelledby="btn-mensal">
     <div class="cards">
       <div class="card">
         <div class="label">2026 YTD (Jan–Mai)</div>
@@ -166,13 +275,13 @@ tbody tr:hover{background:#fafbff}
   </div>
 
   <!-- ===== VIEW MTD ===== -->
-  <div class="view" id="view-mtd">
+  <div class="view" id="view-mtd" role="tabpanel" aria-labelledby="btn-mtd" hidden>
     <div class="legenda">
       <strong>Status (% perda acumulada):</strong>
       <div class="leg-item"><span class="leg-dot" style="background:#1a8a52"></span> Dentro da Meta (≤0,74%)</div>
-      <div class="leg-item"><span class="leg-dot" style="background:#ca8a04"></span> Atenção (0,75–0,90%)</div>
+      <div class="leg-item"><span class="leg-dot" style="background:#ca8a04"></span> Atenção (0,75–0,99%)</div>
       <div class="leg-item"><span class="leg-dot" style="background:#b91c1c"></span> Acima (1,00–1,20%)</div>
-      <div class="leg-item"><span class="leg-dot" style="background:#6d28d9"></span> Muito Acima (&gt;1,21%)</div>
+      <div class="leg-item"><span class="leg-dot" style="background:#6d28d9"></span> Muito Acima (&gt;1,20%)</div>
     </div>
 
     <div class="cards" id="cards-mtd">
@@ -254,12 +363,12 @@ tbody tr:hover{background:#fafbff}
   </div>
 
   <!-- ===== VIEW JUN/2026 ===== -->
-  <div class="view" id="view-jun">
+  <div class="view" id="view-jun" role="tabpanel" aria-labelledby="btn-jun" hidden>
     <div class="legenda">
       <strong>Status (% perda acumulada):</strong>
       <div class="leg-item"><span class="leg-dot" style="background:#1a8a52"></span> Dentro da Meta (≤0,74%)</div>
-      <div class="leg-item"><span class="leg-dot" style="background:#d4a017"></span> Atenção (0,75–0,99%)</div>
-      <div class="leg-item"><span class="leg-dot" style="background:#c0392b"></span> Acima (1,00–1,20%)</div>
+      <div class="leg-item"><span class="leg-dot" style="background:#ca8a04"></span> Atenção (0,75–0,99%)</div>
+      <div class="leg-item"><span class="leg-dot" style="background:#b91c1c"></span> Acima (1,00–1,20%)</div>
       <div class="leg-item"><span class="leg-dot" style="background:#6d28d9"></span> Muito Acima (&gt;1,20%)</div>
     </div>
 
@@ -305,7 +414,7 @@ tbody tr:hover{background:#fafbff}
             <th class="num">Obj. Mês (R$)</th>
             <th class="num">Obj. Dia (R$)</th>
             <th class="num" id="jun-col-dia">Dia (R$)</th>
-            <th class="num" id="jun-col-acum-antes">Acum. Ant. (R$)</th>
+            <th class="num" id="jun-col-acum-antes">1 a 5/Jun (R$)</th>
             <th class="num">Acumulado (R$)</th>
             <th class="num">Perda Média/Loja</th>
             <th class="num">%</th>
@@ -338,27 +447,90 @@ tbody tr:hover{background:#fafbff}
 // =============================================
 // LOGIN
 // =============================================
+// Usuários autorizados
+var authorizedUsers = {
+  'manutencao': 'zamp123',
+  'sul': '1234',
+  'cm': '12'
+};
+
 function doLogin() {
+  var btn = document.getElementById('btn-login');
+  var err = document.getElementById('login-error');
   var u = document.getElementById('inp-user').value.trim();
   var p = document.getElementById('inp-pass').value.trim();
-  if (u === 'manutencao' && p === 'zamp123') {
-    document.getElementById('login-screen').style.display = 'none';
-    document.getElementById('dashboard').style.display = 'block';
-    initDashboard();
-  } else {
-    document.getElementById('login-error').style.display = 'block';
+
+  err.style.display = 'none';
+
+  if (!u || !p) {
+    err.textContent = 'Preencha usuário e senha.';
+    err.style.display = 'block';
+    return;
   }
+
+  btn.classList.add('btn-loading');
+  btn.textContent = 'Entrando...';
+  btn.disabled = true;
+
+  setTimeout(function() {
+    btn.classList.remove('btn-loading');
+    btn.disabled = false;
+    btn.textContent = 'Entrar';
+
+    // Verificação de login
+    var userFound = false;
+    for (var key in authorizedUsers) {
+      if (key === u && authorizedUsers[key] === p) {
+        userFound = true;
+        break;
+      }
+    }
+
+    if (userFound) {
+      document.getElementById('login-screen').style.display = 'none';
+      document.getElementById('dashboard').style.display = 'block';
+      document.getElementById('dashboard').focus();
+      initDashboard();
+    } else {
+      err.textContent = 'Usuário ou senha incorretos.';
+      err.style.display = 'block';
+      document.getElementById('inp-pass').value = '';
+      document.getElementById('inp-pass').focus();
+    }
+  }, 400);
 }
+
+document.getElementById('inp-user').addEventListener('keydown', function(e){ if(e.key==='Enter') document.getElementById('inp-pass').focus(); });
 document.getElementById('inp-pass').addEventListener('keydown', function(e){ if(e.key==='Enter') doLogin(); });
 
 // =============================================
 // VIEW TOGGLE
 // =============================================
 function setView(v) {
-  document.querySelectorAll('.view').forEach(function(el){ el.classList.remove('active'); });
-  document.querySelectorAll('.view-btn').forEach(function(el){ el.classList.remove('active'); });
-  document.getElementById('view-'+v).classList.add('active');
-  document.getElementById('btn-'+v).classList.add('active');
+  var views = document.querySelectorAll('.view');
+  var buttons = document.querySelectorAll('.view-btn');
+
+  views.forEach(function(el){
+    el.classList.remove('active');
+    el.setAttribute('hidden', 'true');
+  });
+  buttons.forEach(function(el){
+    el.classList.remove('active');
+    el.setAttribute('aria-selected', 'false');
+    el.setAttribute('tabindex', '-1');
+  });
+
+  var activeView = document.getElementById('view-'+v);
+  var activeBtn = document.getElementById('btn-'+v);
+
+  activeView.classList.add('active');
+  activeView.removeAttribute('hidden');
+  activeBtn.classList.add('active');
+  activeBtn.setAttribute('aria-selected', 'true');
+  activeBtn.setAttribute('tabindex', '0');
+  activeBtn.focus();
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 // =============================================
@@ -785,35 +957,35 @@ function gerarComentarioDia() {
 // DADOS JUN/2026
 // =============================================
 var junData = {
-  'BK É FOGO LESTE':   [5193.0,11083.0,5940.0,14714.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
-  'BK É FOGO NORTE':   [1389.0,1154.0,551.0,837.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
-  'CENTRO OESTE':      [7456.0,9664.0,6701.0,6637.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
-  'MINAS BAHIA':       [1955.0,6011.0,10385.0,11448.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
-  'NE':                [1280.0,7906.0,1829.0,4114.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
-  'RJ':                [22916.0,5898.0,4160.0,15768.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
-  'SP CENTRO LITORAL': [6745.0,2074.0,5247.0,9068.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
-  'SP INTERIOR NORTE': [5399.0,4658.0,2899.0,5824.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
-  'SP INTERIOR SUL':   [8699.0,9712.0,2854.0,1357.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
-  'SP SUL':            [3484.0,5008.0,6778.0,7846.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
-  'SUL':               [1661.0,7921.0,6281.0,12015.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]
+  'BK É FOGO LESTE':   [5902.0,17379.0,5940.0,5058.0,4990.0,9143.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+  'BK É FOGO NORTE':   [1389.0,1154.0,551.0,837.0,701.0,4242.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+  'CENTRO OESTE':      [7456.0,9664.0,6701.0,3125.0,8322.0,8496.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+  'MINAS BAHIA':       [2641.0,6011.0,10385.0,11448.0,2524.0,8171.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+  'NE':                [2915.0,8310.0,2443.0,5076.0,5357.0,15892.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+  'RJ':                [22473.0,5898.0,4160.0,16147.0,3656.0,24322.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+  'SP CENTRO LITORAL': [6745.0,2074.0,5247.0,9068.0,3291.0,385.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+  'SP INTERIOR NORTE': [5399.0,4658.0,2899.0,5824.0,7900.0,14038.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+  'SP INTERIOR SUL':   [8699.0,9712.0,2854.0,1357.0,9673.0,1362.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+  'SP SUL':            [3484.0,5008.0,7742.0,7846.0,12121.0,26167.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+  'SUL':               [1661.0,7921.0,6281.0,12015.0,15382.0,5327.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]
 };
 
 var junExtraData = {
-  'BK É FOGO LESTE':   {rest:68, projVenda:41176582, objMes:304707, objDia:10157, diaUlt:14714.0, acumAntes:22216.0, acum:36930.0, perdaLoja:543.09, pctMes:0.67},
-  'BK É FOGO NORTE':   {rest:32, projVenda:19426340, objMes:143755, objDia:4792,  diaUlt:837.0, acumAntes:3094.0, acum:3931.0, perdaLoja:122.84, pctMes:0.15},
-  'CENTRO OESTE':      {rest:65, projVenda:38216651, objMes:282803, objDia:9427,  diaUlt:6637.0, acumAntes:23821.0, acum:30458.0, perdaLoja:468.58, pctMes:0.60},
-  'MINAS BAHIA':       {rest:54, projVenda:35806749, objMes:264970, objDia:8832,  diaUlt:11448.0, acumAntes:18351.0, acum:29799.0, perdaLoja:551.83, pctMes:0.62},
-  'NE':                {rest:85, projVenda:56043789, objMes:414724, objDia:13824, diaUlt:4114.0, acumAntes:11015.0, acum:15129.0, perdaLoja:177.99, pctMes:0.20},
-  'RJ':                {rest:93, projVenda:42409670, objMes:313832, objDia:10461, diaUlt:15768.0, acumAntes:32974.0, acum:48742.0, perdaLoja:524.11, pctMes:0.86},
-  'SP CENTRO LITORAL': {rest:34, projVenda:17754650, objMes:131385, objDia:4380,  diaUlt:9068.0, acumAntes:14066.0, acum:23134.0, perdaLoja:680.41, pctMes:0.98},
-  'SP INTERIOR NORTE': {rest:69, projVenda:36007228, objMes:266453, objDia:8882,  diaUlt:5824.0, acumAntes:12956.0, acum:18780.0, perdaLoja:272.17, pctMes:0.39},
-  'SP INTERIOR SUL':   {rest:57, projVenda:32133102, objMes:237785, objDia:7926,  diaUlt:1357.0, acumAntes:21265.0, acum:22622.0, perdaLoja:396.88, pctMes:0.53},
-  'SP SUL':            {rest:65, projVenda:34509873, objMes:255373, objDia:8512,  diaUlt:7846.0, acumAntes:16234.0, acum:23116.0, perdaLoja:355.63, pctMes:0.50},
-  'SUL':               {rest:71, projVenda:35972842, objMes:266199, objDia:8873,  diaUlt:12015.0, acumAntes:15863.0, acum:27878.0, perdaLoja:392.65, pctMes:0.58}
+  'BK É FOGO LESTE':   {rest:68, projVenda:41176582, objMes:304707, objDia:10157, diaUlt:9143.0, acumAntes:39269.0, acum:48412.0, perdaLoja:712.53, pctMes:0.59},
+  'BK É FOGO NORTE':   {rest:32, projVenda:19426340, objMes:143755, objDia:4792,  diaUlt:4242.0, acumAntes:4632.0, acum:8874.0, perdaLoja:277.31, pctMes:0.23},
+  'CENTRO OESTE':      {rest:65, projVenda:38216651, objMes:282803, objDia:9427,  diaUlt:8496.0, acumAntes:35268.0, acum:43764.0, perdaLoja:673.29, pctMes:0.57},
+  'MINAS BAHIA':       {rest:54, projVenda:35806749, objMes:264970, objDia:8832,  diaUlt:8171.0, acumAntes:33009.0, acum:41180.0, perdaLoja:762.59, pctMes:0.58},
+  'NE':                {rest:85, projVenda:56043789, objMes:414724, objDia:13824, diaUlt:15892.0, acumAntes:24101.0, acum:39993.0, perdaLoja:470.51, pctMes:0.36},
+  'RJ':                {rest:93, projVenda:42409670, objMes:313832, objDia:10461, diaUlt:24322.0, acumAntes:52334.0, acum:76656.0, perdaLoja:824.26, pctMes:0.90},
+  'SP CENTRO LITORAL': {rest:34, projVenda:17754650, objMes:131385, objDia:4380,  diaUlt:385.0, acumAntes:26425.0, acum:26810.0, perdaLoja:788.53, pctMes:0.76},
+  'SP INTERIOR NORTE': {rest:69, projVenda:36007228, objMes:266453, objDia:8882,  diaUlt:14038.0, acumAntes:26680.0, acum:40718.0, perdaLoja:590.12, pctMes:0.57},
+  'SP INTERIOR SUL':   {rest:57, projVenda:32133102, objMes:237785, objDia:7926,  diaUlt:1362.0, acumAntes:32295.0, acum:33657.0, perdaLoja:590.47, pctMes:0.52},
+  'SP SUL':            {rest:65, projVenda:34509873, objMes:255373, objDia:8512,  diaUlt:26167.0, acumAntes:36201.0, acum:62368.0, perdaLoja:959.51, pctMes:0.90},
+  'SUL':               {rest:71, projVenda:35972842, objMes:266199, objDia:8873,  diaUlt:5327.0, acumAntes:43260.0, acum:48587.0, perdaLoja:684.32, pctMes:0.68}
 };
 
-var junDias = [1,2,3,4];
-var brasilJunVals = [66177.0,71089.0,53625.0,89628.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null];
+var junDias = [1,2,3,4,5,6];
+var brasilJunVals = [68764.0,77789.0,55203.0,77801.0,73917.0,117545.0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null];
 var metaDiaJunLine = [];
 var metaDiaBrasilJun = 97051; // soma dos objDia
 
@@ -895,7 +1067,7 @@ function initJun() {
 
   var ratioTotal = totalObjDia>0 && totalDia>0 ? totalDia/totalObjDia : 0;
   var diaBgTotal = totalDia===0 ? '' : (ratioTotal < 1.0 ? 'background:#d4f4e2;color:#1a6e3a;font-weight:700' : ratioTotal <= 1.2 ? 'background:#fde8e8;color:#b91c1c;font-weight:700' : 'background:#ede9fe;color:#6d28d9;font-weight:700');
-  var pctTotal = 0.54; // % sobre venda projetada
+  var pctTotal = 0.60; // % sobre venda projetada
   tbody.innerHTML +=
     '<tr class="total-row">' +
     '<td>BRASIL TOTAL</td>' +
@@ -933,7 +1105,7 @@ function initJun() {
 
     // Tab
     var tabBtn = document.createElement('button');
-    tabBtn.className = 'reg-tab-btn' + (idx===0?' active':'');
+    tabBtn.className = 'reg-tab' + (idx===0?' active':'');
     tabBtn.textContent = reg;
     tabBtn.onclick = (function(s){ return function(){
       document.querySelectorAll('#reg-tabs-jun .reg-tab-btn').forEach(function(b){ b.classList.remove('active'); });
