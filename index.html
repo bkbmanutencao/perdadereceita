@@ -996,17 +996,17 @@ var junData = {
 };
 
 var junExtraData = {
-  'BK É FOGO LESTE':   {rest:68, projVenda:41176582, objMes:304707, objDia:10157, diaUlt:7993.0, acumAntes:48412.0, acum:56405.0, perdaLoja:829.49, pctMes:0.59},
-  'BK É FOGO NORTE':   {rest:32, projVenda:19426340, objMes:143755, objDia:4792,  diaUlt:937.0, acumAntes:8874.0, acum:9811.0, perdaLoja:306.59, pctMes:0.22},
-  'CENTRO OESTE':      {rest:65, projVenda:38216651, objMes:282803, objDia:9427,  diaUlt:6184.0, acumAntes:43764.0, acum:49948.0, perdaLoja:768.43, pctMes:0.56},
-  'MINAS BAHIA':       {rest:54, projVenda:35806749, objMes:264970, objDia:8832,  diaUlt:1633.0, acumAntes:41180.0, acum:42813.0, perdaLoja:792.83, pctMes:0.51},
-  'NE':                {rest:85, projVenda:56043789, objMes:414724, objDia:13824, diaUlt:5730.0, acumAntes:39993.0, acum:45723.0, perdaLoja:537.92, pctMes:0.35},
-  'RJ':                {rest:93, projVenda:42409670, objMes:313832, objDia:10461, diaUlt:18180.0, acumAntes:76656.0, acum:94836.0, perdaLoja:1019.74, pctMes:0.96},
-  'SP CENTRO LITORAL': {rest:34, projVenda:17754650, objMes:131385, objDia:4380,  diaUlt:392.0, acumAntes:26810.0, acum:27202.0, perdaLoja:800.06, pctMes:0.66},
-  'SP INTERIOR NORTE': {rest:69, projVenda:36007228, objMes:266453, objDia:8882,  diaUlt:707.0, acumAntes:40718.0, acum:41425.0, perdaLoja:600.36, pctMes:0.49},
-  'SP INTERIOR SUL':   {rest:57, projVenda:32133102, objMes:237785, objDia:7926,  diaUlt:9035.0, acumAntes:33657.0, acum:42692.0, perdaLoja:748.98, pctMes:0.57},
-  'SP SUL':            {rest:65, projVenda:34509873, objMes:255373, objDia:8512,  diaUlt:13495.0, acumAntes:62368.0, acum:75863.0, perdaLoja:1167.12, pctMes:0.94},
-  'SUL':               {rest:71, projVenda:35972842, objMes:266199, objDia:8873,  diaUlt:19609.0, acumAntes:48587.0, acum:68196.0, perdaLoja:960.51, pctMes:0.81}
+  'BK É FOGO LESTE':   {rest:68, projVenda:41176582, objMes:304707, objDia:10157, diaUlt:7993.0, acumAntes:48412.0, acum:56405.0, perdaLoja:829.49, pctMes:0.50},
+  'BK É FOGO NORTE':   {rest:32, projVenda:19426340, objMes:143755, objDia:4792,  diaUlt:937.0, acumAntes:8874.0, acum:9811.0, perdaLoja:306.59, pctMes:0.20},
+  'CENTRO OESTE':      {rest:65, projVenda:38216651, objMes:282803, objDia:9427,  diaUlt:6184.0, acumAntes:43764.0, acum:49948.0, perdaLoja:768.43, pctMes:0.50},
+  'MINAS BAHIA':       {rest:54, projVenda:35806749, objMes:264970, objDia:8832,  diaUlt:1633.0, acumAntes:41180.0, acum:42813.0, perdaLoja:792.83, pctMes:0.40},
+  'NE':                {rest:85, projVenda:56043789, objMes:414724, objDia:13824, diaUlt:5730.0, acumAntes:39993.0, acum:45723.0, perdaLoja:537.92, pctMes:0.30},
+  'RJ':                {rest:93, projVenda:42409670, objMes:313832, objDia:10461, diaUlt:18180.0, acumAntes:76656.0, acum:94836.0, perdaLoja:1019.74, pctMes:0.80},
+  'SP CENTRO LITORAL': {rest:34, projVenda:17754650, objMes:131385, objDia:4380,  diaUlt:392.0, acumAntes:26810.0, acum:27202.0, perdaLoja:800.06, pctMes:0.60},
+  'SP INTERIOR NORTE': {rest:69, projVenda:36007228, objMes:266453, objDia:8882,  diaUlt:707.0, acumAntes:40718.0, acum:41425.0, perdaLoja:600.36, pctMes:0.40},
+  'SP INTERIOR SUL':   {rest:57, projVenda:32133102, objMes:237785, objDia:7926,  diaUlt:9035.0, acumAntes:33657.0, acum:42692.0, perdaLoja:748.98, pctMes:0.50},
+  'SP SUL':            {rest:65, projVenda:34509873, objMes:255373, objDia:8512,  diaUlt:13495.0, acumAntes:62368.0, acum:75863.0, perdaLoja:1167.12, pctMes:0.80},
+  'SUL':               {rest:71, projVenda:35972842, objMes:266199, objDia:8873,  diaUlt:19609.0, acumAntes:48587.0, acum:68196.0, perdaLoja:960.51, pctMes:0.70}
 };
 
 var junDias = [1,2,3,4,5,6,7];
@@ -1092,7 +1092,7 @@ function initJun() {
 
   var ratioTotal = totalObjDia>0 && totalDia>0 ? totalDia/totalObjDia : 0;
   var diaBgTotal = totalDia===0 ? '' : (ratioTotal < 1.0 ? 'background:#d4f4e2;color:#1a6e3a;font-weight:700' : ratioTotal <= 1.2 ? 'background:#fde8e8;color:#b91c1c;font-weight:700' : 'background:#ede9fe;color:#6d28d9;font-weight:700');
-  var pctTotal = 0.61; // % sobre venda projetada
+  var pctTotal = 0.60; // % sobre venda projetada
   tbody.innerHTML +=
     '<tr class="total-row">' +
     '<td>BRASIL TOTAL</td>' +
