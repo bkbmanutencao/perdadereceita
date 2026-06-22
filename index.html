@@ -149,7 +149,6 @@ html { scroll-behavior: smooth; }
   body { background: #fff; color: #000; }
 }
 </style>
-<base target="_blank">
 </head>
 <body>
 <a href="#dashboard" class="skip-link">Pular para o conteúdo</a>
@@ -168,7 +167,7 @@ html { scroll-behavior: smooth; }
   <header>
     <div>
       <h1>📊 Perda de Receita Manutenção</h1>
-      <div class="subtitle">Zamp — Jun/2026 (1–14) | Atualizado em 15/Jun/2026</div>
+      <div class="subtitle">Zamp — Jun/2026 (1–21) | Atualizado em 22/Jun/2026</div>
     </div>
   </header>
 
@@ -241,34 +240,34 @@ html { scroll-behavior: smooth; }
       <div class="leg-item"><span class="leg-dot" style="background:#6b21a8"></span> Muito Acima (&gt;1,20%)</div>
     </div>
     <div class="cards">
-      <div class="card"><div class="label">Total MTD Jun/2026</div><div class="value" id="jun-total-val">R$ 1,302,913</div><div class="sub" id="jun-total-sub">Acumulado MTD Brasil (1–14/Jun)</div></div>
-      <div class="card"><div class="label">Maior Perda/Dia</div><div class="value" id="jun-worst-val">R$ 146,689</div><div class="sub" id="jun-worst-sub">Dia 13/Jun</div></div>
-      <div class="card"><div class="label">Menor Perda/Dia</div><div class="value" id="jun-best-val">R$ 56,030</div><div class="sub" id="jun-best-sub">Dia 3/Jun</div></div>
+      <div class="card"><div class="label">Total MTD Jun/2026</div><div class="value" id="jun-total-val">R$ 2,087,088.00</div><div class="sub" id="jun-total-sub">Acumulado MTD Brasil (1–21/Jun)</div></div>
+      <div class="card"><div class="label">Maior Perda/Dia</div><div class="value" id="jun-worst-val">R$ 178,179.00</div><div class="sub" id="jun-worst-sub">Dia 19/Jun</div></div>
+      <div class="card"><div class="label">Menor Perda/Dia</div><div class="value" id="jun-best-val">R$ 56,030.00</div><div class="sub" id="jun-best-sub">Dia 3/Jun</div></div>
       <div class="card"><div class="label">Meta/Dia Brasil</div><div class="value">R$ 96.066</div><div class="sub">Objetivo diário</div></div>
-      <div class="card" style="background:linear-gradient(135deg,#f5f3ff 0%,#ede9fe 100%);border-color:#c4b5fd"><div class="label" style="color:#7c3aed">🔮 Projeção Fechamento</div><div class="value" id="jun-proj-val" style="color:#6d28d9">R$ 2.819.543</div><div class="sub">Receita Projetada × % Perda (0,7%)</div></div>
+      <div class="card" style="background:linear-gradient(135deg,#f5f3ff 0%,#ede9fe 100%);border-color:#c4b5fd"><div class="label" style="color:#7c3aed">Projeção Fechamento</div><div class="value" id="jun-proj-val" style="color:#6d28d9">R$ 3,115,659.81</div><div class="sub">Receita Projetada × % Perda (0,8%)</div></div>
     </div>
     <div class="chart-row">
       <div class="chart-box"><h2>📊 Brasil — Perda por Dia + Meta (Jun/2026)</h2><canvas id="jun-bar-brasil"></canvas></div>
       <div class="chart-box"><h2>📈 Brasil — Evolução Diária vs Meta</h2><canvas id="jun-line-brasil"></canvas></div>
     </div>
-    <div class="section-divider"><h2>📋 Resumo MTD por Regional — Jun/2026 (1–14/Jun)</h2></div>
+    <div class="section-divider"><h2>📋 Resumo MTD por Regional — Jun/2026 (1–21/Jun)</h2></div>
     <div style="overflow-x:auto;">
       <table>
-        <thead><tr><th>Regional</th><th class="num">Restaurantes</th><th class="num">Proj. Venda (R$)</th><th class="num">Obj. Mês (R$)</th><th class="num">Obj. Dia (R$)</th><th class="num">14/Jun (R$)</th><th class="num">1 a 13/Jun (R$)</th><th class="num">Acumulado (R$)</th><th class="num">Perda Média/Loja</th><th class="num">%</th><th>Status</th></tr></thead>
-                <tbody id="tbody-resumo-jun">
-          <tr><td><strong>BK É FOGO LESTE</strong></td><td class="num">68</td><td class="num">R$ 41,176,582.00</td><td class="num">R$ 304,707.00</td><td class="num">R$ 10,157.00</td><td class="num" style="background:#d1fae5;color:#065f46;font-weight:700">R$ 2,820.00</td><td class="num">R$ 157,543.00</td><td class="num"><strong>R$ 160,363.00</strong></td><td class="num">R$ 2,358.28</td><td class="num">0,8%</td><td><span class="st-amarelo">🟡 Atenção</span></td></tr>
-          <tr><td><strong>BK É FOGO NORTE</strong></td><td class="num">32</td><td class="num">R$ 19,426,340.00</td><td class="num">R$ 143,755.00</td><td class="num">R$ 4,792.00</td><td class="num" style="background:#d1fae5;color:#065f46;font-weight:700">R$ 1,102.00</td><td class="num">R$ 16,500.00</td><td class="num"><strong>R$ 17,602.00</strong></td><td class="num">R$ 550.06</td><td class="num">0,2%</td><td><span class="st-verde">🟢 Dentro</span></td></tr>
-          <tr><td><strong>CENTRO OESTE</strong></td><td class="num">65</td><td class="num">R$ 38,216,651.00</td><td class="num">R$ 282,803.00</td><td class="num">R$ 9,427.00</td><td class="num" style="background:#ede9fe;color:#6d28d9;font-weight:700">R$ 12,358.00</td><td class="num">R$ 152,439.00</td><td class="num"><strong>R$ 164,797.00</strong></td><td class="num">R$ 2,535.34</td><td class="num">0,8%</td><td><span class="st-amarelo">🟡 Atenção</span></td></tr>
-          <tr><td><strong>MINAS BAHIA</strong></td><td class="num">54</td><td class="num">R$ 35,806,749.00</td><td class="num">R$ 264,970.00</td><td class="num">R$ 8,832.00</td><td class="num" style="background:#d1fae5;color:#065f46;font-weight:700">R$ 7,906.00</td><td class="num">R$ 109,476.00</td><td class="num"><strong>R$ 117,382.00</strong></td><td class="num">R$ 2,173.74</td><td class="num">0,6%</td><td><span class="st-verde">🟢 Dentro</span></td></tr>
-          <tr><td><strong>NE</strong></td><td class="num">85</td><td class="num">R$ 56,043,789.00</td><td class="num">R$ 414,724.00</td><td class="num">R$ 13,824.00</td><td class="num" style="background:#d1fae5;color:#065f46;font-weight:700">R$ 3,015.00</td><td class="num">R$ 93,750.00</td><td class="num"><strong>R$ 96,765.00</strong></td><td class="num">R$ 1,138.41</td><td class="num">0,3%</td><td><span class="st-verde">🟢 Dentro</span></td></tr>
-          <tr><td><strong>RJ</strong></td><td class="num">93</td><td class="num">R$ 42,409,670.00</td><td class="num">R$ 313,832.00</td><td class="num">R$ 10,461.00</td><td class="num" style="background:#ede9fe;color:#6d28d9;font-weight:700">R$ 22,885.00</td><td class="num">R$ 202,730.00</td><td class="num"><strong>R$ 225,615.00</strong></td><td class="num">R$ 2,425.97</td><td class="num">1,0%</td><td><span class="st-vermelho">🔴 Acima</span></td></tr>
-          <tr><td><strong>SP CENTRO LITORAL</strong></td><td class="num">34</td><td class="num">R$ 17,754,650.00</td><td class="num">R$ 131,385.00</td><td class="num">R$ 4,380.00</td><td class="num" style="background:#d1fae5;color:#065f46;font-weight:700">R$ 1,843.00</td><td class="num">R$ 55,014.00</td><td class="num"><strong>R$ 56,857.00</strong></td><td class="num">R$ 1,672.26</td><td class="num">0,6%</td><td><span class="st-verde">🟢 Dentro</span></td></tr>
-          <tr><td><strong>SP INTERIOR NORTE</strong></td><td class="num">69</td><td class="num">R$ 36,007,228.00</td><td class="num">R$ 266,453.00</td><td class="num">R$ 8,882.00</td><td class="num" style="background:#d1fae5;color:#065f46;font-weight:700">R$ 6,883.00</td><td class="num">R$ 95,532.00</td><td class="num"><strong>R$ 102,415.00</strong></td><td class="num">R$ 1,484.28</td><td class="num">0,5%</td><td><span class="st-verde">🟢 Dentro</span></td></tr>
-          <tr><td><strong>SP INTERIOR SUL</strong></td><td class="num">57</td><td class="num">R$ 32,133,102.00</td><td class="num">R$ 237,785.00</td><td class="num">R$ 7,926.00</td><td class="num" style="background:#d1fae5;color:#065f46;font-weight:700">R$ 148.00</td><td class="num">R$ 77,323.00</td><td class="num"><strong>R$ 77,471.00</strong></td><td class="num">R$ 1,359.14</td><td class="num">0,5%</td><td><span class="st-verde">🟢 Dentro</span></td></tr>
-          <tr><td><strong>SP SUL</strong></td><td class="num">65</td><td class="num">R$ 34,509,873.00</td><td class="num">R$ 255,373.00</td><td class="num">R$ 8,512.00</td><td class="num" style="background:#d1fae5;color:#065f46;font-weight:700">R$ 3,216.00</td><td class="num">R$ 120,759.00</td><td class="num"><strong>R$ 123,975.00</strong></td><td class="num">R$ 1,907.31</td><td class="num">0,7%</td><td><span class="st-verde">🟢 Dentro</span></td></tr>
-          <tr><td><strong>SUL</strong></td><td class="num">71</td><td class="num">R$ 35,972,842.00</td><td class="num">R$ 266,199.00</td><td class="num">R$ 8,873.00</td><td class="num" style="background:#ede9fe;color:#6d28d9;font-weight:700">R$ 11,360.00</td><td class="num">R$ 148,311.00</td><td class="num"><strong>R$ 159,671.00</strong></td><td class="num">R$ 2,248.89</td><td class="num">0,9%</td><td><span class="st-amarelo">🟡 Atenção</span></td></tr>
-          <tr class="total-row"><td>BRASIL TOTAL</td><td class="num">693</td><td class="num">R$ 389,457,476.00</td><td class="num">R$ 2,881,986.00</td><td class="num">R$ 96.066,00</td><td class="num" style="background:#d1fae5;color:#065f46;font-weight:700">R$ 73,536.00</td><td class="num">R$ 1,229,377.00</td><td class="num"><strong>R$ 1,302,913.00</strong></td><td class="num">—</td><td class="num"><strong>0,7%</strong></td><td><span class="st-verde">🟢 Dentro</span></td></tr>
-        </tbody>
+        <thead><tr><th>Regional</th><th class="num">Restaurantes</th><th class="num">Proj. Venda (R$)</th><th class="num">Obj. Mês (R$)</th><th class="num">Obj. Dia (R$)</th><th class="num">21/Jun (R$)</th><th class="num">1 a 20/Jun (R$)</th><th class="num">Acumulado (R$)</th><th class="num">Perda Média/Loja</th><th class="num">%</th><th>Status</th></tr></thead>
+                                                                        <tbody id="tbody-resumo-jun">
+<tr><td><strong>BK É FOGO LESTE</strong></td><td class="num">68</td><td class="num">R$ 41,176,582.00</td><td class="num">R$ 304,707.00</td><td class="num">R$ 10,157.00</td><td class="num" style="background:#d1fae5;color:#065f46;font-weight:700">R$ 1,110.00</td><td class="num">R$ 249,177.00</td><td class="num"><strong>R$ 250,287.00</strong></td><td class="num">R$ 3,680.69</td><td class="num">0,8%</td><td><span class="st-amarelo">🟡 Atenção</span></td></tr>
+<tr><td><strong>BK É FOGO NORTE</strong></td><td class="num">32</td><td class="num">R$ 19,426,340.00</td><td class="num">R$ 143,755.00</td><td class="num">R$ 4,792.00</td><td class="num" style="background:#d1fae5;color:#065f46;font-weight:700">R$ 0.00</td><td class="num">R$ 21,879.00</td><td class="num"><strong>R$ 21,879.00</strong></td><td class="num">R$ 683.72</td><td class="num">0,2%</td><td><span class="st-verde">🟢 Dentro da Meta</span></td></tr>
+<tr><td><strong>CENTRO OESTE</strong></td><td class="num">65</td><td class="num">R$ 38,216,651.00</td><td class="num">R$ 282,803.00</td><td class="num">R$ 9,427.00</td><td class="num" style="background:#ede9fe;color:#6d28d9;font-weight:700">R$ 28,318.00</td><td class="num">R$ 229,053.00</td><td class="num"><strong>R$ 257,371.00</strong></td><td class="num">R$ 3,959.55</td><td class="num">0,9%</td><td><span class="st-amarelo">🟡 Atenção</span></td></tr>
+<tr><td><strong>MINAS BAHIA</strong></td><td class="num">54</td><td class="num">R$ 35,806,749.00</td><td class="num">R$ 264,970.00</td><td class="num">R$ 8,832.00</td><td class="num" style="background:#d1fae5;color:#065f46;font-weight:700">R$ 4,729.00</td><td class="num">R$ 209,878.00</td><td class="num"><strong>R$ 214,607.00</strong></td><td class="num">R$ 3,974.20</td><td class="num">0,8%</td><td><span class="st-amarelo">🟡 Atenção</span></td></tr>
+<tr><td><strong>NE</strong></td><td class="num">85</td><td class="num">R$ 56,043,789.00</td><td class="num">R$ 414,724.00</td><td class="num">R$ 13,824.00</td><td class="num" style="background:#fee2e2;color:#991b1b;font-weight:700">R$ 15,217.00</td><td class="num">R$ 140,376.00</td><td class="num"><strong>R$ 155,593.00</strong></td><td class="num">R$ 1,830.51</td><td class="num">0,4%</td><td><span class="st-verde">🟢 Dentro da Meta</span></td></tr>
+<tr><td><strong>RJ</strong></td><td class="num">93</td><td class="num">R$ 42,409,670.00</td><td class="num">R$ 313,832.00</td><td class="num">R$ 10,461.00</td><td class="num" style="background:#d1fae5;color:#065f46;font-weight:700">R$ 8,665.00</td><td class="num">R$ 332,063.00</td><td class="num"><strong>R$ 340,728.00</strong></td><td class="num">R$ 3,663.74</td><td class="num">1,1%</td><td><span class="st-vermelho">🔴 Acima</span></td></tr>
+<tr><td><strong>SP CENTRO LITORAL</strong></td><td class="num">34</td><td class="num">R$ 17,754,650.00</td><td class="num">R$ 131,385.00</td><td class="num">R$ 4,380.00</td><td class="num" style="background:#ede9fe;color:#6d28d9;font-weight:700">R$ 27,663.00</td><td class="num">R$ 76,176.00</td><td class="num"><strong>R$ 103,839.00</strong></td><td class="num">R$ 3,054.09</td><td class="num">0,8%</td><td><span class="st-amarelo">🟡 Atenção</span></td></tr>
+<tr><td><strong>SP INTERIOR NORTE</strong></td><td class="num">69</td><td class="num">R$ 36,007,228.00</td><td class="num">R$ 266,453.00</td><td class="num">R$ 8,882.00</td><td class="num" style="background:#d1fae5;color:#065f46;font-weight:700">R$ 6,755.00</td><td class="num">R$ 171,802.00</td><td class="num"><strong>R$ 178,557.00</strong></td><td class="num">R$ 2,587.78</td><td class="num">0,7%</td><td><span class="st-verde">🟢 Dentro da Meta</span></td></tr>
+<tr><td><strong>SP INTERIOR SUL</strong></td><td class="num">57</td><td class="num">R$ 32,133,102.00</td><td class="num">R$ 237,785.00</td><td class="num">R$ 7,926.00</td><td class="num" style="background:#ede9fe;color:#6d28d9;font-weight:700">R$ 10,016.00</td><td class="num">R$ 132,732.00</td><td class="num"><strong>R$ 142,748.00</strong></td><td class="num">R$ 2,504.35</td><td class="num">0,6%</td><td><span class="st-verde">🟢 Dentro da Meta</span></td></tr>
+<tr><td><strong>SP SUL</strong></td><td class="num">65</td><td class="num">R$ 34,509,873.00</td><td class="num">R$ 255,373.00</td><td class="num">R$ 8,512.00</td><td class="num" style="background:#ede9fe;color:#6d28d9;font-weight:700">R$ 11,633.00</td><td class="num">R$ 209,086.00</td><td class="num"><strong>R$ 220,719.00</strong></td><td class="num">R$ 3,395.68</td><td class="num">0,8%</td><td><span class="st-amarelo">🟡 Atenção</span></td></tr>
+<tr><td><strong>SUL</strong></td><td class="num">71</td><td class="num">R$ 35,972,842.00</td><td class="num">R$ 266,199.00</td><td class="num">R$ 8,873.00</td><td class="num" style="background:#d1fae5;color:#065f46;font-weight:700">R$ 7,195.00</td><td class="num">R$ 193,565.00</td><td class="num"><strong>R$ 200,760.00</strong></td><td class="num">R$ 2,827.61</td><td class="num">0,8%</td><td><span class="st-amarelo">🟡 Atenção</span></td></tr>
+<tr class="total-row"><td>BRASIL TOTAL</td><td class="num">693</td><td class="num">R$ 389,457,476.00</td><td class="num">R$ 2,881,986.00</td><td class="num">R$ 96,066.00</td><td class="num" style="background:#ede9fe;color:#6d28d9;font-weight:700">R$ 121,301.00</td><td class="num">R$ 1,965,787.00</td><td class="num"><strong>R$ 2,087,088.00</strong></td><td class="num">—</td><td class="num"><strong>0,8%</strong></td><td><span class="st-amarelo">🟡 Atenção</span></td></tr>
+</tbody>
       </table>
     </div>
     <div id="comentario-jun-box" style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:20px 28px;margin:24px 0;">
@@ -288,22 +287,22 @@ html { scroll-behavior: smooth; }
       <div id="mudancas-jun-texto"></div>
     </div>
 
-    <div class="section-divider"><h2>🏆 Top 10 Restaurantes — Maior Perda de Receita Jun/2026</h2></div>
+    <div class="section-divider"><h2>📋 Top 10 Restaurantes — Maior Perda de Receita Jun/2026</h2></div>
     <div style="overflow-x:auto;margin-bottom:28px;">
       <table>
         <thead><tr><th>#</th><th>Restaurante</th><th>Regional</th><th class="num">Total (R$)</th></tr></thead>
         <tbody>
-          <tr><td>1</td><td><strong>ILR RJ - AV NS DE COPACABANA 915</strong></td><td>RJ</td><td class="num">R$ 39.859</td></tr>
-          <tr><td>2</td><td><strong>FS SP - AV JACU PESSEGO 8210</strong></td><td>SP SUL</td><td class="num">R$ 32.013</td></tr>
-          <tr><td>3</td><td><strong>SHOP CAMPO GRANDE</strong></td><td>CENTRO OESTE</td><td class="num">R$ 29.496</td></tr>
-          <tr><td>4</td><td><strong>FS VILA VELHA - ROD DO SOL</strong></td><td>NE</td><td class="num">R$ 21.392</td></tr>
-          <tr><td>5</td><td><strong>FS SALVADOR - R SILVEIRA</strong></td><td>NE</td><td class="num">R$ 20.804</td></tr>
-          <tr><td>6</td><td><strong>MARTINS 1858 (CABULA)</strong></td><td>NE</td><td class="num">R$ 19.695</td></tr>
-          <tr><td>7</td><td><strong>VARZEA GRANDE SHOP</strong></td><td>CENTRO OESTE</td><td class="num">R$ 18.090</td></tr>
-          <tr><td>8</td><td><strong>CANOAS SHOP</strong></td><td>SUL</td><td class="num">R$ 18.822</td></tr>
-          <tr><td>9</td><td><strong>FS SERTAOZINHO - AV ANTONIO PASCHOAL 1447</strong></td><td>SP INTERIOR NORTE</td><td class="num">R$ 17.622</td></tr>
-          <tr><td>10</td><td><strong>MADUREIRA SHOP</strong></td><td>RJ</td><td class="num">R$ 14.468</td></tr>
-        </tbody>
+<tr><td>1</td><td><strong>FS SP - AV JACU PESSEGO 8210</strong></td><td>SP SUL</td><td class="num">R$ 43,243</td></tr>
+<tr><td>2</td><td><strong>SHOP DA BAHIA</strong></td><td>NE</td><td class="num">R$ 42,833</td></tr>
+<tr><td>3</td><td><strong>ILR RJ - AV NS DE COPACABANA 915</strong></td><td>RJ</td><td class="num">R$ 39,859</td></tr>
+<tr><td>4</td><td><strong>SHOP CENTER UBERABA</strong></td><td>MINAS BAHIA</td><td class="num">R$ 30,717</td></tr>
+<tr><td>5</td><td><strong>SHOP CAMPO GRANDE</strong></td><td>CENTRO OESTE</td><td class="num">R$ 30,126</td></tr>
+<tr><td>6</td><td><strong>CANOAS SHOP</strong></td><td>SUL</td><td class="num">R$ 23,011</td></tr>
+<tr><td>7</td><td><strong>PRAIA MAR SHOP SANTOS</strong></td><td>SP SUL</td><td class="num">R$ 22,671</td></tr>
+<tr><td>8</td><td><strong>CARREFOUR CONTAGEM</strong></td><td>MINAS BAHIA</td><td class="num">R$ 22,398</td></tr>
+<tr><td>9</td><td><strong>FS BARUERI - AV ALPHAVILLE</strong></td><td>SP SUL</td><td class="num">R$ 21,804</td></tr>
+<tr><td>10</td><td><strong>FS VILA VELHA - ROD DO SOL</strong></td><td>NE</td><td class="num">R$ 21,392</td></tr>
+</tbody>
       </table>
     </div>
 
@@ -440,48 +439,50 @@ var metaDiaBrasilLine = Array(31).fill(97050);
 var brasil2025 = [12783237.49,10338523.59,12855003.79,8279539.80,5792463.91,5106118.83,4276724.72,4519684.89,3839126.89,4210758.58,3500733.02,4199262.45];
 var brasil2026 = [4417535.07,3785431.36,4113686.74,4334310.16,4236506.34,null,null,null,null,null,null,null];
 
-// DADOS JUN/2026 ATUALIZADOS (11/06/2026)
+// DADOS JUN/2026 ATUALIZADOS (22/06/2026)
 var junData = {
-  'BK É FOGO LESTE':   [5902,17379,5940,5058,4990,9143,9110,10399,7784,23976,14013,7940,35909,2820,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
-  'BK É FOGO NORTE':   [1389,1154,551,837,701,4242,937,2759,305,666,330,1609,1021,1102,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
-  'CENTRO OESTE':   [7508,10414,6701,4449,8322,8677,9474,19015,12702,13979,10703,7885,32610,12358,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
-  'MINAS BAHIA':   [4343,12063,10549,11448,2524,8171,1633,3715,8899,14077,23215,2369,6471,7906,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
-  'NE':   [4277,8620,2525,5076,5357,15892,5730,2765,10759,7827,5426,4334,3015,3015,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
-  'RJ':   [24589,7339,4372,16147,3656,24322,18180,12980,14995,19134,11637,15195,30187,22885,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
-  'SP CENTRO LITORAL':   [6745,2074,5247,9068,3291,385,392,null,1077,6462,581,1323,18368,1843,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
-  'SP INTERIOR NORTE':   [5399,4658,2899,5824,7900,14038,707,1950,3713,21062,19515,6254,1615,6883,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
-  'SP INTERIOR SUL':   [8699,9712,2854,1357,9673,1362,3376,6768,3599,5878,3607,15157,5282,148,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
-  'SP SUL':   [4008,6376,8111,7846,12121,10442,11870,8943,3604,13254,13491,16968,3725,3216,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
-  'SUL':   [1661,8503,6281,12015,15732,5384,23092,10023,14370,9302,12407,20102,8486,11360,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]
+  'BK É FOGO LESTE':   [5902, 17379, 5940, 5058, 4990, 9143, 9110, 10399, 7784, 23976, 14013, 7940, 35909, 3652, 12892, 12900, 14180, 18431, 28147, 1573, 1110, null, null, null, null, null, null, null, null, null],
+  'BK É FOGO NORTE':   [1389, 1154, 551, 837, 692, 3521, 937, 2759, 305, 666, 330, 1609, 1021, 1102, 2756, 124, 1267, 0, 0, 864, 0, null, null, null, null, null, null, null, null, null],
+  'CENTRO OESTE':   [7508, 10414, 6701, 4449, 8322, 8677, 9474, 19015, 12702, 13979, 10703, 7885, 39011, 14316, 4930, 16395, 13071, 4900, 11923, 5125, 28318, null, null, null, null, null, null, null, null, null],
+  'MINAS BAHIA':   [4343, 12063, 10549, 11448, 2524, 8171, 1633, 3715, 8899, 14077, 23334, 2681, 6471, 7906, 6668, 7575, 20712, 42346, 11437, 3482, 4729, null, null, null, null, null, null, null, null, null],
+  'NE':   [4277, 8620, 2525, 5076, 5357, 15892, 5730, 2765, 10759, 7827, 5426, 4334, 15226, 3626, 5157, 8405, 1989, 6836, 13135, 8255, 15217, null, null, null, null, null, null, null, null, null],
+  'RJ':   [24589, 7339, 4372, 16147, 3656, 24322, 18180, 12980, 14995, 19134, 15195, 11637, 31947, 22885, 11195, 19692, 14110, 8170, 39415, 13386, 8665, null, null, null, null, null, null, null, null, null],
+  'SP CENTRO LITORAL':   [6745, 2074, 5247, 9068, 3291, 385, 392, null, 1077, 6462, 581, 1323, 18368, 1843, 7526, 1240, 3421, 1013, 285, 6311, 27663, null, null, null, null, null, null, null, null, null],
+  'SP INTERIOR NORTE':   [5399, 4658, 2899, 5824, 7900, 14038, 707, 1950, 3713, 21062, 19515, 4998, 1615, 6883, 4919, 9080, 8689, 21387, 25674, 3085, 6755, null, null, null, null, null, null, null, null, null],
+  'SP INTERIOR SUL':   [8699, 9712, 2854, 1357, 9673, 1362, 3376, 7508, 3599, 5878, 3607, 15157, 5282, 148, 2057, 10721, 10732, 12408, 20023, 1346, 10016, null, null, null, null, null, null, null, null, null],
+  'SP SUL':   [4008, 6376, 8111, 7846, 12121, 10442, 11870, 8943, 3604, 13254, 13491, 16968, 3725, 3216, 5536, 19713, 11590, 6824, 21898, 19550, 11633, null, null, null, null, null, null, null, null, null],
+  'SUL':   [1661, 8503, 6281, 12015, 15732, 5384, 23089, 10023, 14370, 8969, 11885, 20774, 9632, 11360, 6028, 8199, 6561, 3691, 6244, 3164, 7195, null, null, null, null, null, null, null, null, null],
 };
 
 var junExtraData = {
-  'BK É FOGO LESTE':   {rest:68, projVenda:41176582, objMes:304707, objDia:10157, diaUlt:2820, acumAntes:157543, acum:160363, perdaLoja:2358.28, pctMes:0.8},
-  'BK É FOGO NORTE':   {rest:32, projVenda:19426340, objMes:143755, objDia:4792, diaUlt:1102, acumAntes:16500, acum:17602, perdaLoja:550.06, pctMes:0.2},
-  'CENTRO OESTE':   {rest:65, projVenda:38216651, objMes:282803, objDia:9427, diaUlt:12358, acumAntes:152439, acum:164797, perdaLoja:2535.34, pctMes:0.8},
-  'MINAS BAHIA':   {rest:54, projVenda:35806749, objMes:264970, objDia:8832, diaUlt:7906, acumAntes:109476, acum:117382, perdaLoja:2173.74, pctMes:0.6},
-  'NE':   {rest:85, projVenda:56043789, objMes:414724, objDia:13824, diaUlt:3015, acumAntes:93750, acum:96765, perdaLoja:1138.41, pctMes:0.3},
-  'RJ':   {rest:93, projVenda:42409670, objMes:313832, objDia:10461, diaUlt:22885, acumAntes:202730, acum:225615, perdaLoja:2425.97, pctMes:1.0},
-  'SP CENTRO LITORAL':   {rest:34, projVenda:17754650, objMes:131385, objDia:4380, diaUlt:1843, acumAntes:55014, acum:56857, perdaLoja:1672.26, pctMes:0.6},
-  'SP INTERIOR NORTE':   {rest:69, projVenda:36007228, objMes:266453, objDia:8882, diaUlt:6883, acumAntes:95532, acum:102415, perdaLoja:1484.28, pctMes:0.5},
-  'SP INTERIOR SUL':   {rest:57, projVenda:32133102, objMes:237785, objDia:7926, diaUlt:148, acumAntes:77323, acum:77471, perdaLoja:1359.14, pctMes:0.5},
-  'SP SUL':   {rest:65, projVenda:34509873, objMes:255373, objDia:8512, diaUlt:3216, acumAntes:120759, acum:123975, perdaLoja:1907.31, pctMes:0.7},
-  'SUL':   {rest:71, projVenda:35972842, objMes:266199, objDia:8873, diaUlt:11360, acumAntes:148311, acum:159671, perdaLoja:2248.89, pctMes:0.9}
+  'BK É FOGO LESTE':  {rest:68, projVenda:41176582, objMes:304707, objDia:10157, diaUlt:1110, acumAntes:249177, acum:250287, perdaLoja:3680.69, pctMes:0.8},
+  'BK É FOGO NORTE':  {rest:32, projVenda:19426340, objMes:143755, objDia:4792, diaUlt:0, acumAntes:21879, acum:21879, perdaLoja:683.72, pctMes:0.2},
+  'CENTRO OESTE':  {rest:65, projVenda:38216651, objMes:282803, objDia:9427, diaUlt:28318, acumAntes:229053, acum:257371, perdaLoja:3959.55, pctMes:0.9},
+  'MINAS BAHIA':  {rest:54, projVenda:35806749, objMes:264970, objDia:8832, diaUlt:4729, acumAntes:209878, acum:214607, perdaLoja:3974.2, pctMes:0.8},
+  'NE':  {rest:85, projVenda:56043789, objMes:414724, objDia:13824, diaUlt:15217, acumAntes:140376, acum:155593, perdaLoja:1830.51, pctMes:0.4},
+  'RJ':  {rest:93, projVenda:42409670, objMes:313832, objDia:10461, diaUlt:8665, acumAntes:332063, acum:340728, perdaLoja:3663.74, pctMes:1.1},
+  'SP CENTRO LITORAL':  {rest:34, projVenda:17754650, objMes:131385, objDia:4380, diaUlt:27663, acumAntes:76176, acum:103839, perdaLoja:3054.09, pctMes:0.8},
+  'SP INTERIOR NORTE':  {rest:69, projVenda:36007228, objMes:266453, objDia:8882, diaUlt:6755, acumAntes:171802, acum:178557, perdaLoja:2587.78, pctMes:0.7},
+  'SP INTERIOR SUL':  {rest:57, projVenda:32133102, objMes:237785, objDia:7926, diaUlt:10016, acumAntes:132732, acum:142748, perdaLoja:2504.35, pctMes:0.6},
+  'SP SUL':  {rest:65, projVenda:34509873, objMes:255373, objDia:8512, diaUlt:11633, acumAntes:209086, acum:220719, perdaLoja:3395.68, pctMes:0.8},
+  'SUL':  {rest:71, projVenda:35972842, objMes:266199, objDia:8873, diaUlt:7195, acumAntes:193565, acum:200760, perdaLoja:2827.61, pctMes:0.8},
 };
 
 var junDias = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
-var brasilJunVals = [74520, 88292, 56030, 79125, 74267, 102058, 84501, 79317, 81807, 135617, 114925, 99136, 146689, 73536, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null];
+var brasilJunVals = [74520, 88292, 56030, 79125, 74258, 101337, 76967, 79285, 81807, 135283, 118079, 95306, 168207, 76937, 69664, 114045, 106322, 126005, 178179, 66139, 121301, null, null, null, null, null, null, null, null, null];
 var metaDiaBrasilJun = 96066;
 
 // ===== DADOS ANTERIORES — atualizar a cada rodada =====
 var junAnterior = {
   pctTotal: 0.8,
   regionais: {
-    'BK É FOGO LESTE': 0.9, 'BK É FOGO NORTE': 0.2, 'CENTRO OESTE': 0.9,
-    'MINAS BAHIA': 0.7, 'NE': 0.3, 'RJ': 1.0, 'SP CENTRO LITORAL': 0.7,
-    'SP INTERIOR NORTE': 0.5, 'SP INTERIOR SUL': 0.5, 'SP SUL': 0.7, 'SUL': 0.9
+    'BK É FOGO LESTE': 0.9, 'BK É FOGO NORTE': 0.2,
+    'CENTRO OESTE': 0.9, 'MINAS BAHIA': 0.9,
+    'NE': 0.4, 'RJ': 1.2,
+    'SP CENTRO LITORAL': 0.6, 'SP INTERIOR NORTE': 0.7,
+    'SP INTERIOR SUL': 0.6, 'SP SUL': 0.8, 'SUL': 0.8
   },
-  projFechamento: 3115279
+  projFechamento: 3115660
 };
 
 var junNames = Object.keys(junData);
@@ -790,7 +791,7 @@ function gerarComentarioDia() {
   if (dataEl) dataEl.textContent = 'Gerado automaticamente';
   if (txtEl) txtEl.innerHTML = txt;
 }
-var pctTotal = 0.7; // % ponderado por projVenda
+var pctTotal = 0.8; // % ponderado por projVenda
 function initJun() {
   console.log("initJun iniciado");
   var hasData = brasilJunVals.filter(function(v){ return v !== null; }).length > 0;
@@ -874,7 +875,7 @@ function initJun() {
       var vsStr = vsMeta!=null ? ('<span class="'+(vsMeta>0?'delta-neg':'delta-pos')+'">'+(vsMeta>0?'+':'')+fmtR(vsMeta)+'</span>') : '<span class="muted">—</span>';
       rows += '<tr style="'+bg+'"><td>'+dia+'/Jun'+(isW?' 🔴':isB?' 🟢':'')+'</td><td class="num">'+(v!=null?fmtR(v):'<span class="muted">—</span>')+'</td><td class="num">'+fmtR(meta)+'</td><td class="num">'+vsStr+'</td></tr>';
     });
-    rows += '<tr class="total-row"><td>Total</td><td class="num">'+fmtR(ex.acum)+'</td><td class="num">'+fmtR(meta*10)+'</td><td class="num"><span class="'+(ex.acum-meta*10>0?'delta-neg':'delta-pos')+'">'+(ex.acum-meta*10>0?'+':'')+fmtR(ex.acum-meta*10)+'</span></td></tr>';
+    rows += '<tr class="total-row"><td>Total</td><td class="num">'+fmtR(ex.acum)+'</td><td class="num">'+fmtR(meta*21)+'</td><td class="num"><span class="'+(ex.acum-meta*21>0?'delta-neg':'delta-pos')+'">'+(ex.acum-meta*21>0?'+':'')+fmtR(ex.acum-meta*21)+'</span></td></tr>';
 
     panel.innerHTML =
       '<div class="reg-cards">' +
@@ -924,33 +925,41 @@ function initJun() {
 }
 
 function gerarComentarioJun() {
-  var ultimoDia = 14;
-  var idxUlt = 13;
-  var diasValores = [];
-  junNames.forEach(function(reg) {
-    var v = junData[reg][idxUlt];
-    if (v !== null && v !== undefined && v > 0) diasValores.push({ reg: reg, val: v });
-  });
+  var ultimoDia = 21;
+  var idxUlt = 20;
   var txtEl = document.getElementById('jun-comentario-texto');
   var titEl = document.getElementById('jun-comentario-titulo');
-  if (!diasValores.length) {
-    if (txtEl) txtEl.textContent = 'Sem dados de Junho ainda. Atualize com os dados do primeiro dia.';
+  function fmtC(v){ return 'R$ ' + v.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2}); }
+  
+  // Total do dia usa brasilJunVals (fonte oficial)
+  var totalDia = brasilJunVals[idxUlt] || 0;
+  if (totalDia === 0) {
+    if (txtEl) txtEl.textContent = 'Sem dados do dia ' + ultimoDia + ' ainda.';
     return;
   }
-  diasValores.sort(function(a,b){ return b.val - a.val; });
-  var totalDia = diasValores.reduce(function(a,b){ return a + b.val; }, 0);
-  var maiores = diasValores.slice(0,3);
-  var menores = diasValores.slice(-3).reverse();
+  
+  // Coletar valores das regionais via junExtraData.diaUlt (valores reais do dia)
+  var regValores = [];
+  junNames.forEach(function(reg) {
+    var ex = junExtraData[reg];
+    if (ex && ex.diaUlt > 0) regValores.push({ reg: reg, val: ex.diaUlt });
+  });
+  regValores.sort(function(a,b){ return b.val - a.val; });
+  var maiores = regValores.slice(0,3);
+  var menores = regValores.slice(-3).reverse();
+  
   var totalAcum = 0;
   junNames.forEach(function(r){ totalAcum += (junExtraData[r].acum||0); });
-  function fmtC(v){ return 'R$ ' + v.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2}); }
+  
   var atingiuMeta = totalDia <= metaDiaBrasilJun;
   var metaMsg = atingiuMeta
     ? '<strong style="color:#065f46">✅ Meta diária atingida!</strong> A perda de ' + fmtC(totalDia) + ' ficou abaixo do objetivo de ' + fmtC(metaDiaBrasilJun) + '.'
     : '<strong style="color:#991b1b">❌ Meta diária não atingida.</strong> A perda de ' + fmtC(totalDia) + ' superou o objetivo de ' + fmtC(metaDiaBrasilJun) + '.';
+  
   var totalProjVenda = 0;
   junNames.forEach(function(r){ totalProjVenda += (junExtraData[r].projVenda||0); });
   var projFechamento = totalProjVenda * (pctTotal / 100);
+  
   var txt = 'No dia <strong>' + ultimoDia + '/Jun/2026</strong>: ' + metaMsg + '<br>' +
     'Maiores perdas: ' + maiores.map(function(d){ return '<strong>' + d.reg + '</strong> (' + fmtC(d.val) + ')'; }).join(', ') + '. ' +
     'Menores perdas: ' + menores.map(function(d){ return '<strong>' + d.reg + '</strong> (' + fmtC(d.val) + ')'; }).join(', ') + '. ' +
@@ -985,14 +994,17 @@ function gerarMudancas() {
       mudancas.push({ ind: reg, ant: fmtPct(pctAntReg), atu: fmtPct(pctAtuReg), st: st, cor: cor });
     }
   });
+  // Projeção de fechamento — sempre mostrar na tabela
   var totalProjVendaMud = 0;
   junNames.forEach(function(r){ totalProjVendaMud += (junExtraData[r].projVenda||0); });
   var projAtu = totalProjVendaMud * (pctTotal / 100);
+  var stProj = 'Atual';
+  var corProj = '#7c3aed';
   if (Math.abs(projAtu - junAnterior.projFechamento) >= 10000) {
-    var stProj = projAtu > junAnterior.projFechamento ? 'Subiu' : 'Desceu';
-    var corProj = projAtu > junAnterior.projFechamento ? '#ca8a04' : '#065f46';
-    mudancas.push({ ind: 'Projecao Fechamento', ant: fmtK(junAnterior.projFechamento), atu: fmtK(projAtu), st: stProj, cor: corProj });
+    stProj = projAtu > junAnterior.projFechamento ? 'Subiu' : 'Desceu';
+    corProj = projAtu > junAnterior.projFechamento ? '#ca8a04' : '#065f46';
   }
+  mudancas.push({ ind: 'Proj. Fechamento', ant: fmtK(junAnterior.projFechamento), atu: fmtK(projAtu), st: stProj, cor: corProj });
   if (mudancas.length === 0) {
     box.innerHTML = '<p style="color:#64748b;font-size:0.9rem;margin:0;">Nenhuma mudanca significativa em relacao a atualizacao anterior.</p>';
     return;
