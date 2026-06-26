@@ -552,7 +552,7 @@ var junAnterior = {
 
 var junNames = Object.keys(junData);
 
-// pctTotal = % oficial do BI (sobrescreve o calculado)
+// pctTotal = % oficial do BI (único, fixo)
 var pctTotal = 0.8;
 
 function initDashboard() {
@@ -861,12 +861,7 @@ function gerarComentarioDia() {
   if (dataEl) dataEl.textContent = 'Gerado automaticamente';
   if (txtEl) txtEl.innerHTML = txt;
 }
-var pctTotal = (function(){
-  var sumAcum = 0, sumProj = 0;
-  var r = Object.keys(junExtraData);
-  r.forEach(function(k){ sumAcum += (junExtraData[k].acum||0); sumProj += (junExtraData[k].projVenda||0); });
-  return sumProj > 0 ? (sumAcum / sumProj) * 100 : 0;
-})();
+
 function initJun() {
   console.log("initJun iniciado");
   var hasData = brasilJunVals.filter(function(v){ return v !== null; }).length > 0;
